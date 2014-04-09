@@ -11,19 +11,19 @@ class TestPipeline(object):
     db = con.spider
 
     def process_item(self, item, spider):
-        if item['url'] == "":
-            return item
+        # if item['url'] == "":
+        #     return item
 
         dbdata = {"name":"", "url":"", "price":"", "memprice":"", "press":"", "publication":"", "author":"", "desc":"", "belong":""}
         dbdata["name"] = item['name']
         dbdata["url"] = item['url']
-        dbdata["price"] = item['price']
-        dbdata["memprice"] = item['memprice']
-        dbdata["press"] = item['press']
-        dbdata["publication"] = item['publication']
-        dbdata["author"] = item['author']
+        # dbdata["price"] = item['price']
+        # dbdata["memprice"] = item['memprice']
+        # dbdata["press"] = item['press']
+        # dbdata["publication"] = item['publication']
+        # dbdata["author"] = item['author']
         dbdata["desc"] = item['desc']
-        dbdata["belong"] = item['belong']
+        # dbdata["belong"] = item['belong']
 
         try:
             self.db.booklist.insert(dbdata)
